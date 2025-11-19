@@ -33,3 +33,55 @@ nano main.cpp
 
 ### Step 4 — Compile the Program
 
+command to compile (with threading support):
+g++ -std=c++20 -pthread main.cpp -o producer_consumer
+
+### Step 5 — Run the Program
+
+execute the program
+./producer_consumer
+
+### Step 6 — Optional (Clean Up / Re-run)
+
+If you modify your code and want to recompile:
+rm producer_consumer
+g++ -std=c++20 -pthread main.cpp -o producer_consumer
+./producer_consumer
+
+### Step 7 — Verify Threading Support (Optional Check)
+
+Check whether your system supports threads:
+lscpu | grep -i "core"
+
+### usage
+The program demonstrates a classic Producer–Consumer system implemented using Concurrent C++.
+It uses multiple producer threads to generate data and consumer threads to process it concurrently.
+A thread-safe queue ensures synchronized access between producers and consumers using mutex and condition variables.
+
+  how_to_run:
+    - Step 1: Open the Linux terminal in your project folder.
+    - Step 2: Compile the program using:
+        command: g++ -std=c++20 -pthread main.cpp -o producer_consumer
+    - Step 3: Run the executable:
+        command: ./producer_consumer
+    - Step 4: Observe producers generating data and consumers processing it concurrently.
+
+  expected_output: |
+    Producer 1 produced 101
+    Producer 2 produced 201
+        Consumer 1 consumed 101
+        Consumer 2 consumed 201
+    Producer 1 produced 102
+        Consumer 1 consumed 102
+    Main thread exiting...
+
+features:
+  - Multi-threaded producer–consumer model using C++ threads.
+  - Thread-safe queue implemented with std::mutex and std::condition_variable.
+  - Safe and synchronized communication between threads.
+  - Efficient waiting and notification without busy-waiting.
+  - Scalable design — supports multiple producers and consumers.
+  - Demonstrates real-world concurrency principles.
+
+
+
