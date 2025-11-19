@@ -41,16 +41,14 @@ g++ -std=c++20 -pthread main.cpp -o producer_consumer
 execute the program
 ./producer_consumer
 
-### Step 6 — Optional (Clean Up / Re-run)
-
-If you modify your code and want to recompile:
+ND : If the code needs to be recompiled: 
 rm producer_consumer
 g++ -std=c++20 -pthread main.cpp -o producer_consumer
 ./producer_consumer
 
-### Step 7 — Verify Threading Support (Optional Check)
+### Step 7 — Verify Threading Support 
 
-Check whether your system supports threads:
+Check whether the system supports threads:
 lscpu | grep -i "core"
 
 ### Usage
@@ -60,7 +58,7 @@ A thread-safe queue ensures synchronized access between producers and consumers 
 
 ###  How_to_run:
   
-    - Step 1: Open the Linux terminal in your project folder.
+    - Step 1: Open the Linux terminal.
     - Step 2: Compile the program using:
         command: g++ -std=c++20 -pthread main.cpp -o producer_consumer
     - Step 3: Run the executable:
