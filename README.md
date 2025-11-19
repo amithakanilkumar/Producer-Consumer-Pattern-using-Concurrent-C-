@@ -7,7 +7,7 @@ The main goal is to ensure **synchronized access** to shared data without race c
 
 ---
 
-## ⚙️ Installation Instructions
+## Installation Instructions
 
 Follow these steps to compile and run the project on a Linux system.
 
@@ -53,12 +53,13 @@ g++ -std=c++20 -pthread main.cpp -o producer_consumer
 Check whether your system supports threads:
 lscpu | grep -i "core"
 
-### usage
+### Usage
 The program demonstrates a classic Producer–Consumer system implemented using Concurrent C++.
 It uses multiple producer threads to generate data and consumer threads to process it concurrently.
 A thread-safe queue ensures synchronized access between producers and consumers using mutex and condition variables.
 
-  how_to_run:
+###  How_to_run:
+  
     - Step 1: Open the Linux terminal in your project folder.
     - Step 2: Compile the program using:
         command: g++ -std=c++20 -pthread main.cpp -o producer_consumer
@@ -66,7 +67,9 @@ A thread-safe queue ensures synchronized access between producers and consumers 
         command: ./producer_consumer
     - Step 4: Observe producers generating data and consumers processing it concurrently.
 
-  expected_output: |
+  
+### Expected_output:
+
     Producer 1 produced 101
     Producer 2 produced 201
         Consumer 1 consumed 101
@@ -75,7 +78,8 @@ A thread-safe queue ensures synchronized access between producers and consumers 
         Consumer 1 consumed 102
     Main thread exiting...
 
-features:
+### Features:
+
   - Multi-threaded producer–consumer model using C++ threads.
   - Thread-safe queue implemented with std::mutex and std::condition_variable.
   - Safe and synchronized communication between threads.
